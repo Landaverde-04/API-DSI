@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Receta</title>
+</head>
+<body>
+    <div>
+        <h1>Registrar Receta</h1>
+        <form action="/registro_receta/" method="post">
+            {% csrf_token %}
+            <label for="nombre_receta">Nombre de la receta:</label>
+            <input type="text" name="nombre_receta" id="nombre_receta">
+            <label for="descripcion_receta">Descripción de la receta:</label>
+            <input type="text" name="descripcion_receta" id="descripcion_receta">
+            <label for="precio_receta">Precio de la receta:</label>
+            <input type="text" name="precio_receta" id="precio_receta">
+            <input type="submit" value="Registrar"> 
+        </form>
+    </div>
+    
+</body>
+</html>
