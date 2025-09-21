@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de recetas</title>
+</head>
+<body>
+    <div>
+        <h1>Lista de recetas</h1>
+        <button><a href="{% url 'registrar_receta' %}">Registrar Receta</a></button>
+        <table>
+            <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Precio</th>
+                <th>Tipo</th>
+                <th>Extras</th>
+                <th>Eliminar</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for r in recetas %}
+            <tr>
+                <td>{{ r.nombre }}</td>
+                <td>{{ r.descripcion }}</td>
+                <td>{{ r.precio }}</td>
+                <td>{{ r.tipo }}</td>
+                <td>{{ r.extras }}</td>
+                <td><a href="{% url 'eliminar_receta' r.id %}" onclick="return confirm('¿Estás seguro de eliminar esta receta?')">Eliminar</a></td> 
+            </tr>
+            {% endfor %}
+                </tbody>
+        </table>
+    </div>
+</body>
+</html>

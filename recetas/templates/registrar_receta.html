@@ -8,7 +8,7 @@
 <body>
     <div>
         <h1>Registrar Receta</h1>
-        <form action="/registro_receta/" method="post">
+        <form method="post">
             {% csrf_token %}
             <label for="nombre_receta">Nombre de la receta:</label>
             <input type="text" name="nombre_receta" id="nombre_receta">
@@ -16,8 +16,13 @@
             <input type="text" name="descripcion_receta" id="descripcion_receta">
             <label for="precio_receta">Precio de la receta:</label>
             <input type="text" name="precio_receta" id="precio_receta">
-            <input type="submit" value="Registrar"> 
+            <label for="tipo_receta">Tipo de la receta:</label>
+            <input type="text" name="tipo_receta" id="tipo_receta">
+            <label for="cantidad_receta">Extras:</label>
+            <input type="text" name="extra_receta" id="extra_receta">
+            <button type="submit">Registrar</button>
         </form>
+        <button><a href="{% url 'lista_recetas' %}">Volver</a></button>
     </div>
     
 </body>
